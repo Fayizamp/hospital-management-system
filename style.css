@@ -1,0 +1,838 @@
+body {
+    font-family: 'poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+.custom-navbar {
+    background-color: rgb(252, 250, 250);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    max-width: 100%;
+}
+
+.logo img {
+    width: 40px;
+}
+
+.logo span {
+    margin-right: 10px;
+    color: rgb(240, 139, 24);
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 600;
+   
+}
+
+.appointment a {
+    text-decoration: none;
+    padding: 11px 28px;
+    color: #fff;
+    font-weight: 600;
+    background-image: linear-gradient(55deg, #ff7f00, #e76ea7);
+    font-size: 16px;
+    border-radius: 30px;
+    border-top-right-radius: 0;
+    transition: 0.5s;
+
+}
+
+.appointment a:hover {
+    border-top-right-radius: 30px;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    position: relative; 
+}
+
+.close {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute; 
+    top: -25px; 
+    right: -3px; 
+    cursor: pointer; 
+}
+
+.close:hover,
+.close:focus {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+
+
+.btn-icon {
+    outline: none;
+    border: none;
+    background-color: white;
+    display: none; 
+}
+
+.sidebar {
+    display: none; 
+    position: fixed; 
+    left: -250px; 
+    top: 50px; 
+    height: 100%; 
+    background-color: rgb(252, 250, 250);
+    width: 250px; 
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); 
+    transition: left 0.3s ease; 
+    z-index: 999; 
+}
+
+.sidebar.show {
+    display: block; 
+    left: 0; 
+    padding-left: 20px;
+    padding-top: 30px;
+
+}
+
+@media (max-width: 992px) {
+    .btn-icon {
+        display: block;
+    }
+    .links {
+        display: none !important; 
+    }
+
+    .sidebar {
+        display: block; 
+    }
+
+    .sidebar.show {
+        left: 0; 
+    }
+
+}
+@media (max-width:555px){
+    .appointment a{
+        padding: 8px 20px;
+        font-weight: 550;
+        font-size: 13px;
+    }
+    .logo {
+        font-size: 18px;
+        font-weight: 600;
+       
+    }
+    .logo img {
+        width: 25px;
+    }
+    
+
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+/* 
+.navbar-toggler {
+    order: 1; 
+}
+
+.navbar-toggler-icon {
+    color: rgb(136, 76, 8);
+} */
+
+
+
+
+/* **********************************Home */
+.home-cont {
+    /* max-width: 100%; */
+    min-height: 70vh;
+    background-image: linear-gradient(45deg, rgba(17, 17, 83, 0.7), rgba(37, 151, 113, 0.9)),
+        url('https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/video/Vd3bj2jPe/videoblocks-surgeons-operating-process-close-up-of-surgical-team-performing-operation-with-surgery-tools-medical-operation-surgeons-hands-working-with-instruments-at-surgeon-room_brljxzwyq_thumbnail-1080_08.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    /* clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); */
+
+}
+
+.left {
+    width: 45%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@keyframes animate {
+    from {
+        transform: translateY(-150%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+.left h2 {
+    font-size: 50px;
+    animation: animate 1s ease-in-out;
+}
+
+.left p {
+    font-size: 17px;
+    line-height: 1.5em;
+    animation: animate 1.2s ease-in-out;
+}
+
+.right {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.right img {
+    width: 90%;
+    min-width: 680px;
+}
+
+
+
+
+
+.row {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    text-align: center;
+    background-color: #f5faee;
+    position: absolute; 
+    bottom: 70px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 65%;
+    z-index: 1; 
+    border-radius: 20px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.col-div {
+    padding: 10px 46px;
+    transition: color 0.3s;
+}
+
+.col-div span {
+    display: block;
+    font-size: 1.8em; 
+    color: #239e74; 
+    transition: color 0.3s; 
+}
+
+.col-div p {
+    font-size: 0.8em;
+    color: #333;
+}
+.col-div:hover {
+    background-color: #239e74; 
+    border-radius: 20px; 
+    cursor: pointer;
+}
+
+.col-div:hover span,
+.col-div:hover p {
+    color: white;
+
+}
+
+@media (max-width: 1100px) {
+    .home-cont {
+        flex-direction: column;
+        text-align: center;
+    }
+    .right ,
+    .left{
+        width: 100%;
+    }
+    
+    .right img {
+        width: 80%;
+        
+    }
+
+    .row {
+        width: 80%;
+        bottom: 50px;
+    }
+
+    .col-div {
+        padding: 10px 20px;
+    }
+
+    .col-div span {
+        font-size: 1.5em;
+    }
+
+    .col-div p {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 768px) {
+    .home-cont {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .left,
+    .right {
+        width: 100%;
+    }
+
+    .left h2 {
+        font-size: 40px;
+    }
+
+    .left p {
+        font-size: 18px;
+    }
+
+    .right img {
+        min-width: 100%;
+        height: auto;
+    }
+}
+@media (max-width: 480px) {
+    .left h2 {
+        font-size: 25px;
+    }
+
+    .left p {
+        font-size: 14px;
+    }
+    
+}
+
+
+/* ****************************** */
+ 
+.about {
+    /* background-image: url('https://wallpaperaccess.com/full/260161.jpg'); */
+    /* background-image: url('https://wallpaperaccess.com/full/260161.jpg'); */
+    background-image: url('https://img.freepik.com/free-vector/minimal-desktop-background-white-abstract-design-vector_53876-135921.jpg?size=626&ext=jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    /* box-shadow: 100 10px 10px rgba(0, 0, 0, 0.7); */
+    padding: 50px;
+    width: 100%;
+    color: #333;
+    min-height: 90vh;
+
+}
+
+.left1 {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.right1 {
+    flex: 1;
+    text-align: center;
+}
+
+.right1 img {
+    max-width: 90%;
+    height: auto;
+    margin-top: 100px;
+    border-radius: 15px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.ab{
+    color: rgb(77, 128, 223);
+    font-size: 18px;
+    font-weight: 550;
+}
+.left1 h1{
+    font-weight: 600;
+}
+.left1 button{
+    border: none;
+    background-color: #e07204;
+    color: rgb(252, 252, 252);
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer; 
+    font-size: 16px; 
+   outline: none;
+   &:hover{
+    background-color: #d16d09;
+
+   }
+}
+
+
+.left1 p{
+    font-size: 19px;
+    line-height: 1.5em;
+}
+
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column; 
+        padding: 20px;
+        min-height: 75vh;
+    }
+
+    .left1,
+    .right1 {
+        width: 100%;
+        padding: 0; 
+    }
+    .left1  h1{
+        font-size: 27px;
+    }
+    .left1 p{
+        font-size: 16px;
+        line-height: 1.3em;
+    }
+    .right1 img {
+        margin-top: 10px;
+        max-width: 100%;
+    }
+}
+
+
+/* ***************************8 */
+#department{
+    /* background-image: linear-gradient(to top, rgba(241, 237, 237, 0), white),url('https://static.vecteezy.com/system/resources/previews/000/543/813/original/white-abstract-background-vector.jpg'); */
+    background-repeat: no-repeat;
+    /* background-image: url("https://wallpaperaccess.com/full/1754627.jpg"); */
+    background-image: url('https://img.freepik.com/premium-photo/white-plate-with-white-background-that-says-velcro_994023-128687.jpg?w=740');
+    background-size: cover;
+    min-height: 50vh;
+    padding-top: 80px;
+    padding-bottom: 150px;
+}
+.department p{
+   font-size: 20px;
+   text-align: center;
+   color: rgb(14, 78, 197);
+}
+.department span{
+    font-size: 45px;
+    font-weight: 700;
+    color: rgb(32, 31, 31);
+}
+/* .posters{
+    display: flex;
+    padding: 30px 50px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    flex-direction: row;
+}
+
+.posters::-webkit-scrollbar{ 
+    display: none;      
+} */
+ 
+.posters{
+    width: 100%;
+   
+}
+
+
+.box{
+    display: inline-block;
+    margin:  50px 12px;
+    position: relative;
+    padding-left: 6px;
+    /* display: flex; */
+}
+
+/* 
+.box{
+    margin: 0 20px;
+    position: relative;
+    display: flex;
+    /* max-height:600px ; */
+/* } */ 
+.box img{
+    width: 300px;
+    height: 200px; 
+    transition: transform 0.3s ease;
+}
+.box img:hover{
+    transform: scale(1.1);
+}
+.dep-box{
+    width: 200px;
+    height: auto; 
+    background-color: #fff;
+    position: absolute;
+    top: 150px;
+    left: 50px;
+    overflow: hidden; 
+    z-index: 2;
+    cursor: pointer;
+
+}
+
+ /* .dep-box::before {
+    content: "";
+    position: absolute;
+    bottom: -100%; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #239e74;
+    transition: bottom 0.5s ease;
+    z-index: 1;
+    color: white;
+}
+
+.dep-box:hover::before {
+    bottom: 0;
+}  */
+
+@media (max-width:758px){
+    .box img{
+        width: 200px;
+    }
+    .department p{
+        font-size: 17px;
+        
+     }
+     .department span{
+        font-size: 35px;
+        font-weight: 600;
+        
+    }
+    #department{
+        padding-bottom: 50px;
+    }
+    .box{
+        margin: 0 15px;
+       
+    }
+    /* .posters{
+
+        padding: 20px 30px;
+        
+    } */
+    .posters{
+        display: flex;
+        padding: 20px 30px;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        flex-direction: row;
+    }
+}
+
+/* ***************************************************** */
+
+.servie{
+    max-height: 100vh;
+}
+
+.head h2{
+    text-align: center;
+    color: rgb(21, 22, 110);
+    font-size: 40px;
+    font-weight: 700;
+    padding: 50px 0;
+}
+
+.grid-20, .grid-40 {
+    border: 1px solid #fff;
+    float: left;
+}
+.grid-40 {
+    width: 40%;
+}
+.grid-20{
+    width: 20%;
+}
+
+.hover-effect h2 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 0 0 20px 80px;
+    margin: 0;
+    z-index: 2;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.hover-effect {
+    width: 100%;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    background-color: #edf6ff;
+    transition: all 1s ease-in-out;
+    height: 270px;
+}
+
+.hover-effect img {
+    width: 100%;
+    /* height: auto; */
+    transition: transform 2s ease-in-out;
+    object-fit: cover;
+    height: 100%;
+
+}
+
+.hover-effect:hover img {
+    transform: scale(1.5);
+}
+
+.hover-effect:after {
+    background: #FFF;
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    content: '';
+    opacity: 0.7;
+    transition: all 0.5s ease-in-out;
+}
+
+.hover-effect:hover:after {
+    opacity: 0.1;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+}
+
+.hover-effect h2 img {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    display: block;
+    width: 40px !important;
+    transition: none;
+}
+
+.hover-effect:hover h2 img {
+    transform: none;
+}
+
+@media (max-width: 1200px) {
+    .scroll {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding: 30px 0;
+    }
+    .hover-effect img {
+        width: 100%; 
+        height: 170px; 
+    }
+    .grid-20, .grid-40 {
+        flex: 0 0 auto;
+        float: none;
+    }
+    .hover-effect {
+        height: 170px; 
+    }
+    .head h2{
+        padding: 25px 0 0px 0;
+        font-size: 30px;
+
+    }
+}
+
+/* ***************************************************************** */
+
+.rev-box{
+    display: flex;
+    /* padding: 0 50px; */
+    justify-content: space-around;
+}
+.feedback-item{
+    background-image: linear-gradient(to right, rgb(215, 235, 204), rgb(248, 240, 240));
+    margin: 60px 20px;
+    max-height: 350px;
+    padding: 15px;
+    animation: slide 1.5s;
+    transition: opacity 0.5s;
+    &:hover{
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes slide{
+    0%{
+        opacity: 0;
+    transform: translateY(-50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.feedback-item img{
+    width: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+
+}
+.review h1{
+    text-align: center;
+    font-weight: 700;
+    padding-top: 200px;
+}
+@media (max-width:1200px){
+    .review h1{
+        padding-top: 20px;
+    }
+}
+@media (max-width: 578px) {
+    .feedback-item {
+       margin: 15px auto;
+       width: 60%;
+    }
+    .rev-box{
+        display: block;
+    }
+}
+/* ***************************************************************************** */
+
+/* .contact-content{
+   background-image:linear-gradient(to right, rgb(6, 84, 148), rgb(12, 67, 112));
+    background-size: cover;
+    background-position: center;
+    padding: 50px 80px; 
+    color: white;
+}
+.line{
+    content: '';
+    width: 100%;
+    height: 5px;
+    background-color: rgb(6, 6, 105);
+    margin: 20px 20px 40px 20px;
+} */
+
+
+.contacts {
+    color: white;
+}
+
+.line {
+    width: 90%;
+    height: 5px;
+    background-color: rgb(16, 16, 148);
+    margin: 50px auto;
+}
+
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+     
+}
+.left-footer{
+    display: flex;
+    justify-content: space-between;
+    /* align-items: flex-start; */
+}
+.color{
+    background: linear-gradient(to right, rgb(6, 84, 148), rgb(12, 67, 112));
+    padding: 50px 80px;
+}
+
+
+.column {
+    flex: 1;
+    margin: 0 70px;
+}
+
+.quick-links h3, .contact-info h3 {
+    margin-bottom: 10px;
+}
+
+.quick-links ul, .contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.quick-links ul li, .contact-info ul li {
+    margin-bottom: 10px;
+}
+
+.quick-links ul li a, .contact-info ul li {
+    color: white;
+    text-decoration: none;
+}
+
+.quick-links ul li a:hover {
+    text-decoration: underline;
+}
+
+.right-contact iframe {
+    border: 0;
+ 
+    width: 100%;
+    height: 300px;
+}
+.line2{
+    width: 90%;
+    margin: 30px auto;
+    background-color: rgb(163, 157, 157);
+    height: 1px ;
+}
+
+.social-links  ul {
+    display: flex;
+    list-style: none;
+}
+.social-links  ul  li i{
+    margin-left: 20px;
+    color: white;
+    /* background-color: white; */
+    &:hover{
+        color: rgb(50, 182, 243);
+    }
+}
