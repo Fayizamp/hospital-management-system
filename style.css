@@ -836,3 +836,32 @@ a{
         color: rgb(50, 182, 243);
     }
 }
+
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .left-footer {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .column {
+        margin: 20px 0; 
+        text-align: center; 
+    }
+
+    .line {
+        margin: 30px auto; 
+    }
+
+    .social-links ul {
+        justify-content: center; /* Center social links */
+    }
+
+    .social-links ul li {
+        margin: 0 10px; /* Adjust margin for social icons */
+    }
+}
